@@ -1,10 +1,14 @@
 name: Null Platform - Trigger External Workflow
 
 on:
-  workflow_run:
-    workflows: ["Control Null Platform CI"]
-    types:
-      - completed
+  workflow_call:
+    inputs:
+      config-path:
+        required: true
+        type: string
+    secrets:
+      personal_access_token:
+        required: true
 
 jobs:
   trigger-external-workflow:
