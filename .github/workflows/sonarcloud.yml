@@ -5,6 +5,7 @@ on:
     workflows: ["Control SonarCloud CI"]
     types:
       - completed
+      - requested
 
 jobs:
   build:
