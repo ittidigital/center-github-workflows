@@ -1,9 +1,11 @@
-name: SonarCloud
+name: SonarCloud - Trigger External Workflow
+
 on:
-  pull_request:
-    branches:
-      - main
-      - develop
+  workflow_run:
+    workflows: ["Control SonarCloud CI"]
+    types:
+      - completed
+
 jobs:
   build:
     name: Build and analyze

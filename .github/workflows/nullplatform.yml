@@ -1,19 +1,13 @@
-name: ci-nullplatform
-env:
-  NULLPLATFORM_API_KEY: ${{ secrets.NULLPLATFORM_API_KEY }}
-on:
-  push:
-    branches:
-      - develop
-      - main
-  workflow_dispatch:
+name: Null Platform - Trigger External Workflow
 
-permissions:
-  id-token: write
-  contents: read
-  packages: read
+on:
+  workflow_run:
+    workflows: ["Control Null Platform CI"]
+    types:
+      - completed
+
 jobs:
-  build:
+  trigger-external-workflow:
     runs-on: ubuntu-latest
     steps:
       - name: Install nullplatform cli
