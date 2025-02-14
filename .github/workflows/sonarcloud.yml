@@ -1,14 +1,21 @@
 name: SonarCloud - Trigger External Workflow
 
 on:
-  workflow_run:
+  workflow_call:
     workflows: ["Control SonarCloud CI"]
     types:
       - completed
       - requested
+    inputs:
+      config-path:
+        required: true
+        type: string
+    secrets:
+      personal_access_token:
+        required: true
 
 jobs:
-  build:
+  triage:
     name: Build and analyze
     runs-on: ubuntu-latest
 
