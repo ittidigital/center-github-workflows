@@ -1,0 +1,34 @@
+name: center-github-workflows
+id: ari:cloud:compass:17b02e60-fdb1-4adb-babd-07075fcfeb4d:component/d043ac6d-044a-4240-ab87-22bddbfeb32b/fcc6718c-1f90-44ee-8316-19be147e144e
+description: Repositorio para centralizar los workflow de git
+configVersion: 1
+typeId: SERVICE
+fields:
+  tier: 4
+links:
+  - name: null
+    type: REPOSITORY
+    url: https://github.com/ittidigital/center-github-workflows
+relationships:
+  DEPENDS_ON: []
+labels:
+  - source:github
+customFields:
+  - name: CI/CD
+    type: multi_select
+    value: null
+  - name: LInk a APM en New Relic
+    type: text
+    value: null
+  - name: Onprem
+    type: boolean
+    value: false
+  - name: 'Servidores Produccion:'
+    type: text
+    value: null
+  - name: Servidores SDLC
+    type: text
+    value: null
+  - name: puerto
+    type: text
+    value: null
